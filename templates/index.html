@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>大当たり回転数予測</title>
+</head>
+<body>
+    <h1>次の大当たり回転数予測</h1>
+    <form method="POST">
+        <label for="input_atari">直近の大当たり回転数を入力してください:</label><br>
+        <input type="number" id="input_atari" name="input_atari" required
+               value="{{ input_value if input_value is not none else '' }}">
+        <br><br>
+        <input type="submit" value="予測する">
+    </form>
+
+    {% if prediction is not none %}
+        <h2>予測結果: {{ prediction }} 回転</h2>
+    {% endif %}
+</body>
+</html>
